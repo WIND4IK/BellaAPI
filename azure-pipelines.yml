@@ -12,7 +12,7 @@ variables:
   tag: '$(Build.BuildId)'
   containerRegistry: 'LucidBellaACR'
   imageRepository: 'bella-api'
-  appName: 'BellaAPI'
+  appName: 'bella-api'
 
 stages:
 - stage: Build
