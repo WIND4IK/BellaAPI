@@ -1,11 +1,11 @@
 FROM mcr.microsoft.com/dotnet/sdk:7.0 as build-env
-WORKDIR /source
-EXPOSE 5000
-ENV ASPNETCORE_URLS=http://*:5000
+WORKDIR /src
+EXPOSE 6001
+ENV ASPNETCORE_URLS=https://*:6001
 
-COPY /source/*.csproj .
+COPY /src/*.csproj .
 RUN dotnet restore
-COPY /source .
+COPY /src .
 RUN dotnet publish -c Release -o /publish
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 as runtime
