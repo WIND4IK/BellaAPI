@@ -11,7 +11,7 @@ resources:
 variables:
   tag: '$(Build.BuildId)'
   containerRegistryServiceConnection: 'lucidbelladockeregistryserviceconnection'
-  containerRegistry: 'lucidbellaacr'
+  containerRegistry: 'lucidbellaacr.azurecr.io'
   imageRepository: 'bellaapi'
   appName: 'bella-api'
 
