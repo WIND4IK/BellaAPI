@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/dotnet/sdk:7.0 as build-env
 WORKDIR /src
 EXPOSE 80
 EXPOSE 443
-ENV ASPNETCORE_URLS=http://*:80
+ENV ASPNETCORE_URLS=https://*:443
 
 COPY /src/*.csproj .
 RUN dotnet restore
