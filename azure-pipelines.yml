@@ -10,8 +10,8 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
-  containerRegistry: 'lucidbellaacr'
-  imageRepository: 'bella-api'
+  containerRegistry: 'lucidbelladockeregistryserviceconnection'
+  imageRepository: 'lucidbellaacr'
   appName: 'bella-api'
 
 stages:
