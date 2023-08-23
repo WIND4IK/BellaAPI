@@ -10,7 +10,7 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
-  containerRegistry: 'LucidBellaACR'
+  containerRegistry: 'lucidbellaacr'
   imageRepository: 'bella-api'
   appName: 'bella-api'
 
@@ -21,7 +21,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: windows-latest
+      vmImage: ubuntu-latest
     steps:
     - task: Docker@2
       displayName: Build an image
@@ -32,8 +32,3 @@ stages:
         Dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
-    - task: AzureWebAppContainer@1
-      inputs:
-        azureSubscription: 'Azure subscription 1(4f50daa8-201d-461d-b630-4d093a3f4be1)'
-        appName: $(appName)
-        containers: $(containerRegistry)/$(imageRepository):$(tag)
