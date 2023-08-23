@@ -10,7 +10,7 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
-  containerRegistry: 'LucidBellaACR'
+  containerRegistry: 'lucidbellaacr'
   imageRepository: 'bella-api'
   appName: 'bella-api'
 
@@ -21,7 +21,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: windows-latest
+      vmImage: ubuntu-latest
     steps:
     - task: Docker@2
       displayName: Build an image
