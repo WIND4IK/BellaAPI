@@ -10,7 +10,7 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
-  containerRegistry: 'lucidbellaacr'
+  containerRegistry: 'LucidBellaACR'
   imageRepository: 'bella-api'
   appName: 'bella-api'
 
