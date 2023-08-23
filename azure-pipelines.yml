@@ -11,7 +11,7 @@ resources:
 variables:
   tag: '$(Build.BuildId)'
   containerRegistry: 'lucidbelladockeregistryserviceconnection'
-  imageRepository: 'lucidbellaacr'
+  imageRepository: 'bellaapi'
   appName: 'bella-api'
 
 stages:
