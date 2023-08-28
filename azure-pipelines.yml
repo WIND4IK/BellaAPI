@@ -30,11 +30,11 @@ stages:
     - task: DotNetCoreCLI@2
       inputs:
         command: 'custom'
-        custom: 'dev-certs https --clean'
+        custom: ' dev-certs https --clean'
       
     - task: DotNetCoreCLI@2
       inputs:
         command: 'custom'
-        custom: 'dev-certs https --trust'
+        custom: ' dev-certs https --trust'
     
 
