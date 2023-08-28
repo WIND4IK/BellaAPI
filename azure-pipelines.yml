@@ -22,7 +22,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: ubuntu-latest
+      vmImage: windows-latest
 
     steps:
     - task: Docker@2
@@ -39,4 +39,18 @@ stages:
         azureSubscription: 'Azure subscription 1(4f50daa8-201d-461d-b630-4d093a3f4be1)'
         appName: $(appName)
         containers: $(containerRegistry)/$(imageRepository):$(tag)
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: 'custom'
+        custom: 'dev-certs https clean'
+      
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: 'custom'
+        custom: 'dev-certs https'
+        
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: 'custom'
+        custom: 'dev-certs https --trust'
 
