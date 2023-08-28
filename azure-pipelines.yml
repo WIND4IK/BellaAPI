@@ -25,31 +25,7 @@ stages:
       vmImage: windows-latest
 
     steps:
-    - task: Docker@2
-      displayName: Build an image
-      inputs:
-        containerRegistry: $(containerRegistryServiceConnection)
-        repository: $(imageRepository)
-        command: 'buildAndPush'
-        Dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
-        tags: |
-          $(tag)
-    - task: AzureWebAppContainer@1
-      inputs:
-        azureSubscription: 'Azure subscription 1(4f50daa8-201d-461d-b630-4d093a3f4be1)'
-        appName: $(appName)
-        containers: $(containerRegistry)/$(imageRepository):$(tag)
-      
-    - task: DotNetCoreCLI@2
-      inputs:
-        command: 'custom'
-        custom: '--version'
-    
-    - task: UseDotNet@2
-      displayName: Use .NET 6.0
-      inputs:
-        packageType: 'sdk'
-        version: '6.0.x'
+
 
     - task: DotNetCoreCLI@2
       inputs:
@@ -60,3 +36,5 @@ stages:
       inputs:
         command: 'custom'
         custom: 'dev-certs https --trust'
+    
+
