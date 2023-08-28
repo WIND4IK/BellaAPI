@@ -22,7 +22,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: windows-latest
+      vmImage: ubuntu-latest
 
     steps:
 
