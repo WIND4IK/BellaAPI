@@ -11,7 +11,7 @@ namespace BellaAPI.Controllers
         [HttpPost("Invoice")]
         public Invoice Invoice(GenerateInvoiceRequest request)
         {
-            using (ChannelFactory<InvoiceAPI> cf = new ChannelFactory<InvoiceAPI>(new BasicHttpBinding(), new EndpointAddress("http://localhost:3333/bella/InvoiceAPI")))
+            using (ChannelFactory<InvoiceAPI> cf = new ChannelFactory<InvoiceAPI>(new BasicHttpBinding(), new EndpointAddress("http://bella-core.azurewebsites.net/bella/InvoiceAPI")))
             {
                 InvoiceAPI channel = cf.CreateChannel();
                 return channel.Invoice(request);
