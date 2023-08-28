@@ -44,4 +44,11 @@ stages:
       inputs:
         command: 'custom'
         custom: '--version'
+    
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: 'custom'
+        custom: 'tool install -g dotnet-sdk-6.0'
+    
+    
 
